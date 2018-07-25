@@ -1,4 +1,4 @@
-package upump.info.sinscount;
+package upump.info.sinscount.adapters;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -7,14 +7,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.zip.Inflater;
 
+import upump.info.sinscount.R;
 import upump.info.sinscount.model.Day;
 
 public class AdapterDay extends RecyclerView.Adapter<DayVH> {
+
     private List<Day> days = new ArrayList<>();
+
+    public AdapterDay(List<Day> days) {
+        this.days = days;
+    }
+
     @NonNull
     @Override
     public DayVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

@@ -5,63 +5,63 @@ public enum EnumSins {
         @Override
         public Sin getSin() {
             Sin sin = new Sin();
-            sin.setName("Название греха");
+            sin.setName("Похоть");
             sin.setDescription("Описание греха");
-            sin.setImg("test");
+            sin.setImg("lust");
             return sin;
         }
     }, GLUTTONY() {
         @Override
         public Sin getSin() {
             Sin sin = new Sin();
-            sin.setName("Название греха");
+            sin.setName("Обжорство");
             sin.setDescription("Описание греха");
-            sin.setImg("test");
+            sin.setImg("glut");
             return sin;
         }
     }, GREED() {
         @Override
         public Sin getSin() {
             Sin sin = new Sin();
-            sin.setName("Название греха");
+            sin.setName("Жадность");
             sin.setDescription("Описание греха");
-            sin.setImg("test");
+            sin.setImg("greed");
             return sin;
         }
     }, SLOTH() {
         @Override
         public Sin getSin() {
             Sin sin = new Sin();
-            sin.setName("Название греха");
+            sin.setName("Лень");
             sin.setDescription("Описание греха");
-            sin.setImg("test");
+            sin.setImg("sloth");
             return sin;
         }
     }, WRATH() {
         @Override
         public Sin getSin() {
             Sin sin = new Sin();
-            sin.setName("Название греха");
+            sin.setName("Гнев");
             sin.setDescription("Описание греха");
-            sin.setImg("test");
+            sin.setImg("wrath");
             return sin;
         }
     }, ENVY() {
         @Override
         public Sin getSin() {
             Sin sin = new Sin();
-            sin.setName("Название греха");
+            sin.setName("Зависть");
             sin.setDescription("Описание греха");
-            sin.setImg("test");
+            sin.setImg("envy");
             return sin;
         }
     }, PRIDE() {
         @Override
         public Sin getSin() {
             Sin sin = new Sin();
-            sin.setName("Название греха");
+            sin.setName("Гордыня");
             sin.setDescription("Описание греха");
-            sin.setImg("test");
+            sin.setImg("pride");
             return sin;
         }
     };

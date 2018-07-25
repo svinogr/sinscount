@@ -1,6 +1,7 @@
-package upump.info.sinscount;
+package upump.info.sinscount.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -16,9 +17,11 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 
+import upump.info.sinscount.DayActivity;
+import upump.info.sinscount.R;
 import upump.info.sinscount.model.Day;
 
-class DayVH extends RecyclerView.ViewHolder {
+public class DayVH extends RecyclerView.ViewHolder {
     private Day day;
     private ImageView imageView;
     private TextView dayTextView, yearTextView;
@@ -26,7 +29,17 @@ class DayVH extends RecyclerView.ViewHolder {
 
     public DayVH(View itemView) {
         super(itemView);
+        imageView = itemView.findViewById(R.id.main_card_layout_img);
+        dayTextView = itemView.findViewById(R.id.main_card_layout_day);
+        yearTextView = itemView.findViewById(R.id.main_card_layout_year);
         this.context = itemView.getContext();
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = DayActivity.creatIntent(context, day);
+                context.startActivity(intent);
+            }
+        });
     }
 
     public void bind(Day day) {
@@ -38,8 +51,8 @@ class DayVH extends RecyclerView.ViewHolder {
 
     private void setImg() {
         RequestOptions options = new RequestOptions()
-                .transforms(new RoundedCorners(50))
-                .centerCrop()
+                .transforms(new RoundedCorners(150))
+//                .centerCrop()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .priority(Priority.HIGH);
 

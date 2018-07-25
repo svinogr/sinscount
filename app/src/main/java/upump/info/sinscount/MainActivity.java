@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -14,9 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import upump.info.sinscount.model.Day;
+import upump.info.sinscount.adapters.AdapterDay;
 
 public class MainActivity extends AppCompatActivity {
-    private List<Day> days = new ArrayList<>();
+    private List<Day> daysList = new ArrayList<>();
     private RecyclerView recyclerView;
     private AdapterDay adapterDay;
 
@@ -35,6 +37,28 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        tempDays();
+
+        recyclerView = findViewById(R.id.main_activity_rec_view);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+
+        AdapterDay adapterDay = new AdapterDay(daysList);
+
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(adapterDay);
+
+
+    }
+
+    private void tempDays() {
+        for (int i = 0; i < 10; i++ ) {
+            Day day = new Day();
+            day.setColor("#ff5a6e");
+            day.setDay(i + " июня");
+            day.setYear("2019");
+            daysList.add(day);
+        }
     }
 
     @Override
